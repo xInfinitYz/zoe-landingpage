@@ -4,17 +4,18 @@ import { Zoom } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 import { ArrowLeftIcon,ArrowRightIcon } from '@heroicons/react/24/solid'
 import Typed from 'react-typed';
+import Image from 'next/image';
 
 const Slideshow = () => {
 	const [buttonVisible, setButtonVisible] = useState(false);
 	//Array of Images
 	const images = [
-		"images/1.jpg",
-		"images/2.jpg",
-		"images/3.jpg",
-		"images/4.jpg",
-		"images/5.jpg",
-		"images/6.jpg",
+		"/images/1.jpg",
+		"/images/2.jpg",
+		"/images/3.jpg",
+		"/images/4.jpg",
+		"/images/5.jpg",
+		"/images/6.jpg",
 	];
 
 	//These are custom properties for zoom effect while slide-show
@@ -39,7 +40,7 @@ const Slideshow = () => {
 			<Zoom {...zoomInProperties}>
 				{images.map((each, index) => (
 					<div key={index} className="flex justify-center items-center w-screen h-screen relative">
-						<img className="w-screen" src={each} />
+						<img className="max-w-none w-screen h-full object-cover object-center" src={each} />
 						<div className="absolute z-10 flex flex-col justify-center items-center inset-0">
 							<h1 className="text-center md:text-6xl text-4xl font-bold text-white mb-4">
 								<Typed
@@ -66,6 +67,10 @@ const Slideshow = () => {
 									Go to shop!
                         </button>
 						}
+						
+						<div className="absolute bottom-0 w-full text-center pb-4">
+            <span className="text-white">Made with ❤️ by Oleksandr Kyselov</span>
+        </div>
 						</div>
 					</div>
 				))}
