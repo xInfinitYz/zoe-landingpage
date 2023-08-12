@@ -24,14 +24,17 @@ const Slideshow = () => {
 		duration: 5000,
 		transitionDuration: 300,
 		infinite: true,
+		arrows: false,
+		pauseOnHover: false,
+		canSwipe:true,
 		prevArrow: (
 			<div className="ml-10">
-				{/*<ArrowLeftIcon className="h-8 w-8 text-white cursor-pointer" />*/}
+				<ArrowLeftIcon className="h-8 w-8 text-white cursor-pointer" />
 			</div>
 		),
 		nextArrow: (
 				<div className="mr-10">
-				   {/*<ArrowRightIcon className="h-8 w-8 text-white cursor-pointer" />*/}
+				   <ArrowRightIcon className="h-8 w-8 text-white cursor-pointer" />
 			    </div>
 		),
 	};
@@ -41,14 +44,16 @@ const Slideshow = () => {
 				{images.map((each, index) => (
 					<div key={index} className="flex justify-center items-center w-screen h-screen relative">
 						<img className="max-w-none w-screen h-full object-cover object-center" src={each} />
-						<div className="absolute z-10 flex flex-col justify-center items-center inset-0">
+						<div className="absolute z-10 flex flex-col justify-evenly items-center inset-0">
 							<h1 className="text-center md:text-6xl text-4xl font-bold text-white mb-4">
 								<Typed
-									strings={["Hello, I'm Zoe."]}
-									typeSpeed={20}
+									strings={["Hello, I'm Zoe.", "Shop now!"]}
+									typeSpeed={100}
+									backDelay={5000}
+									backSpeed={100}
 									startDelay={200}
 									showCursor={false}
-									onComplete={() => setButtonVisible(true)}
+									loop
 								/>
 							</h1>
 							{/*<p className="text-center md:text-2xl text-xl font-bold text-white">
@@ -60,15 +65,14 @@ const Slideshow = () => {
 									onComplete={() => setButtonVisible(true)}
 								/>
 				</p>*/}
-							{buttonVisible && 
-							<button className="transition-opacity mt-4 py-2 px-6 border-2 border-white rounded-md text-white hover:bg-white hover:text-black focus:outline-none duration-1500 ease-in-out"
-                    
+							
+							<button className="transition-opacity mt-4 py-2 px-6 border border-white text-white hover:bg-white hover:text-black focus:outline-none duration-1500 ease-in-out"
                                 onClick={() => { window.location.href = "https://shop.zoecosentino.com" }}>
 									Go to shop!
                         </button>
-						}
 						
-						<div className="absolute bottom-0 w-full text-center pb-4">
+						
+						<div className="absolute bottom-0 w-full text-center pb-4 text-sm">
             <span className="text-white">Made with ❤️ by Oleksandr Kyselov</span>
         </div>
 						</div>
