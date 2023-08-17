@@ -52,7 +52,7 @@ const Slideshow = () => {
 				
 							<h1 className="text-center md:text-6xl text-4xl font-bold text-white mb-36 fixed">
 								<Typed
-									strings={["Hello, I'm Zoe.", "Shop now!"]}
+									strings={["I'm Zoe.", "Shop now!"]}
 									typeSpeed={100}
 									backDelay={5000}
 									backSpeed={100}
