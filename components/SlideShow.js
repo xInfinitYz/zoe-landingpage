@@ -43,9 +43,14 @@ const Slideshow = () => {
 			<Zoom {...zoomInProperties}>
 				{images.map((each, index) => (
 					<div key={index} className="flex justify-center items-center w-screen h-screen relative">
+
 						<img className="max-w-none w-screen h-full object-cover object-center" src={each} />
-						<div className="absolute z-10 flex flex-col justify-evenly items-center inset-0">
-							<h1 className="text-center md:text-6xl text-4xl font-bold text-white mb-4">
+					
+						<div className="absolute z-10 flex flex-col justify-around items-center inset-0">
+<div className="w-24 h-24">
+	<Image src="/images/zc-text-white.png" loading="lazy" objectFit="contain" layout="responsive" width={300} height={300}  />
+</div>
+							<h1 className="text-center md:text-6xl text-4xl font-bold text-white mb-4 fixed">
 								<Typed
 									strings={["Hello, I'm Zoe.", "Shop now!"]}
 									typeSpeed={100}
@@ -65,10 +70,9 @@ const Slideshow = () => {
 									onComplete={() => setButtonVisible(true)}
 								/>
 				</p>*/}
-							
 							<button className="transition-opacity mt-4 py-2 px-6 border border-white text-white hover:bg-white hover:text-black focus:outline-none duration-1500 ease-in-out"
-                                onClick={() => { window.location.href = "https://shop.zoecosentino.com" }}>
-									Go to shop!
+                                onClick={() => { window.location.href = "https://store.zoecosentino.com" }}>
+									Go to the Store!
                         </button>
 						
 						

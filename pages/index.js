@@ -6,7 +6,8 @@ export default function Home() {
     <div>
       <Head>
         <title>Zoe Cosentino</title>
-        <link rel="icon" href="/pro.ico" />
+        <link rel="icon" href="/pro_dark.ico" media="(prefers-color-scheme: dark)" />
+        <link rel="icon" href="/pro_light.ico" media="(prefers-color-scheme: light)" />
       </Head>
       <Slideshow/>
     </div>
