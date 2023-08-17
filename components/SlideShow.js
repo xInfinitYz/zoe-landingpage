@@ -45,7 +45,7 @@ const Slideshow = () => {
 					<div key={index} className="flex justify-center items-center w-screen h-screen relative">
 
 						<img className="max-w-none w-screen h-full object-cover object-center" src={each} />
-						<div className="absolute top-0 left-0 w-48 h-24 z-10"> {/* Use absolute positioning for the image */}
+						<div className="absolute top-0 sm:left-0 left-3/3 w-8/12 sm:w-4/12 md:w-3/12 lg:w-2/12 h-24 z-10"> 
                             <Image src="/images/zc-logo-text-white.png" loading="lazy" objectFit="contain" layout="responsive" width={600} height={300} />
                         </div>
 						<div className="absolute z-10 flex flex-col justify-around items-center inset-0">
@@ -72,7 +72,7 @@ const Slideshow = () => {
 				</p>*/}
 							<button className="transition-opacity mt-4 py-2 px-6 border border-white text-white hover:bg-white hover:text-black focus:outline-none duration-1500 ease-in-out"
 								onClick={() => { window.location.href = "https://store.zoecosentino.com" }}>
-								   Go to the Store!
+								   Go to the store!
 							</button>
 
 
