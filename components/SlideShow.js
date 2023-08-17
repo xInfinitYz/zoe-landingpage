@@ -2,7 +2,7 @@ import React, { useState } from "react";
 //These are Third party packages for smooth slideshow
 import { Zoom } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
-import { ArrowLeftIcon,ArrowRightIcon } from '@heroicons/react/24/solid'
+import { ArrowLeftIcon, ArrowRightIcon } from '@heroicons/react/24/solid'
 import Typed from 'react-typed';
 import Image from 'next/image';
 
@@ -26,16 +26,16 @@ const Slideshow = () => {
 		infinite: true,
 		arrows: false,
 		pauseOnHover: false,
-		canSwipe:true,
+		canSwipe: true,
 		prevArrow: (
 			<div className="ml-10">
 				<ArrowLeftIcon className="h-8 w-8 text-white cursor-pointer" />
 			</div>
 		),
 		nextArrow: (
-				<div className="mr-10">
-				   <ArrowRightIcon className="h-8 w-8 text-white cursor-pointer" />
-			    </div>
+			<div className="mr-10">
+				<ArrowRightIcon className="h-8 w-8 text-white cursor-pointer" />
+			</div>
 		),
 	};
 	return (
@@ -45,12 +45,12 @@ const Slideshow = () => {
 					<div key={index} className="flex justify-center items-center w-screen h-screen relative">
 
 						<img className="max-w-none w-screen h-full object-cover object-center" src={each} />
-					
+						<div className="absolute top-0 left-0 w-48 h-24 z-10"> {/* Use absolute positioning for the image */}
+                            <Image src="/images/zc-logo-text-white.png" loading="lazy" objectFit="contain" layout="responsive" width={600} height={300} />
+                        </div>
 						<div className="absolute z-10 flex flex-col justify-around items-center inset-0">
-<div className="w-24 h-24">
-	<Image src="/images/zc-text-white.png" loading="lazy" objectFit="contain" layout="responsive" width={300} height={300}  />
-</div>
-							<h1 className="text-center md:text-6xl text-4xl font-bold text-white mb-4 fixed">
+				
+							<h1 className="text-center md:text-6xl text-4xl font-bold text-white mb-36 fixed">
 								<Typed
 									strings={["Hello, I'm Zoe.", "Shop now!"]}
 									typeSpeed={100}
@@ -71,20 +71,20 @@ const Slideshow = () => {
 								/>
 				</p>*/}
 							<button className="transition-opacity mt-4 py-2 px-6 border border-white text-white hover:bg-white hover:text-black focus:outline-none duration-1500 ease-in-out"
-                                onClick={() => { window.location.href = "https://store.zoecosentino.com" }}>
-									Go to the Store!
-                        </button>
-						
-						
-						<div className="absolute bottom-0 w-full text-center pb-4 text-sm">
-            <span className="text-white">Made with ❤️ by Oleksandr Kyselov</span>
-        </div>
+								onClick={() => { window.location.href = "https://store.zoecosentino.com" }}>
+								   Go to the Store!
+							</button>
+
+
+							<div className="absolute bottom-0 w-full text-center pb-4 text-sm">
+								<span className="text-white">Made with ❤️ &nbsp; by Oleksandr Kyselov</span>
+							</div>
 						</div>
 					</div>
 				))}
 			</Zoom>
 		</div>
-	);	
+	);
 };
 
 export default Slideshow;
