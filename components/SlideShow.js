@@ -102,7 +102,7 @@ const Slideshow = () => {
 			<Zoom {...zoomInProperties}>
 				{images.map((each, index) => (
 					<div key={index} className="flex justify-center items-center w-screen h-screen relative">
-						<div className="flex-1  space-x-10 absolute right-0 top-0 p-5 hidden sm:block">
+						<div className="flex-1  space-x-10 absolute right-0 top-0 p-5 hidden sm:block mix-blend-difference ">
 							<Social/>
 						</div>
 						<img className="max-w-none w-screen h-full object-cover object-center" src={each} />
@@ -111,7 +111,7 @@ const Slideshow = () => {
 						</div>
 						<div className="absolute z-10 flex flex-col items-center ">
 							<div className="flex-1">
-								<h1 className="h-2 text-center md:text-6xl text-4xl font-bold text-white mb-36">
+								<h1 className="h-2 text-center md:text-6xl text-4xl font-bold text-white mb-36  mix-blend-difference">
 									<Typed
 										strings={["I'm Zoe.", "Shop now!"]}
 										typeSpeed={100}
@@ -134,7 +134,7 @@ const Slideshow = () => {
 				</p>*/}
 
 
-							<div className="flex-1">
+							<div className="flex-1  mix-blend-difference">
 								<button className="transition-opacity mt-4 py-2 px-6 border border-white text-white hover:bg-white hover:text-black focus:outline-none duration-1500 ease-in-out"
 									onClick={() => { window.location.href = "https://store.zoecosentino.com" }}>
 									Go to the store!
@@ -143,11 +143,11 @@ const Slideshow = () => {
 
 							
 						</div>
-						<div className="absolute z-10 mt-10 flex justify-center space-x-10 bottom-14 sm:hidden block ">
+						<div className="absolute z-10 mt-10 flex justify-center space-x-10 bottom-14 sm:hidden block mix-blend-difference p-10">
 
 							<Social/>
 							</div>
-						<div className="absolute bottom-0 w-full text-center pb-4 text-sm">
+						<div className="absolute bottom-0 w-full text-center pb-4 text-sm mix-blend-difference">
 							<span className="text-white">Made with ❤️ &nbsp; by Oleksandr Kyselov</span>
 						</div>
 					</div>
