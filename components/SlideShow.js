@@ -50,6 +50,19 @@ const footerNavigation = {
 	],
 }
 
+const Social = () => {
+	return (
+		<>
+		{footerNavigation.social.map((item) => (
+			<a key={item.name} href={item.href} target="_blank" rel="noreferrer" className="text-gray-200 hover:text-white">
+				<span className="sr-only">{item.name}</span>
+				<item.icon className="h-10 w-10 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300" aria-hidden="true" />
+			</a>
+		))}
+	</>
+	)
+}
+
 const Slideshow = () => {
 	const [buttonVisible, setButtonVisible] = useState(false);
 	//Array of Images
@@ -89,13 +102,8 @@ const Slideshow = () => {
 			<Zoom {...zoomInProperties}>
 				{images.map((each, index) => (
 					<div key={index} className="flex justify-center items-center w-screen h-screen relative">
-						<div className="flex-1  space-x-10 absolute right-0 top-0 p-5">
-							{footerNavigation.social.map((item) => (
-								<a key={item.name} href={item.href} target="_blank" rel="noreferrer" className="text-gray-200 hover:text-white">
-									<span className="sr-only">{item.name}</span>
-									<item.icon className="h-10 w-10 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300" aria-hidden="true" />
-								</a>
-							))}
+						<div className="flex-1  space-x-10 absolute right-0 top-0 p-5 hidden sm:block">
+							<Social/>
 						</div>
 						<img className="max-w-none w-screen h-full object-cover object-center" src={each} />
 						<div className="absolute top-0 sm:left-0 left-3/3 w-8/12 sm:w-4/12 md:w-3/12 lg:w-2/12 h-24 z-10">
@@ -133,8 +141,12 @@ const Slideshow = () => {
 								</button>
 							</div>
 
-
+							
 						</div>
+						<div className="absolute z-10 mt-10 flex justify-center space-x-10 bottom-14 sm:hidden block ">
+
+							<Social/>
+							</div>
 						<div className="absolute bottom-0 w-full text-center pb-4 text-sm">
 							<span className="text-white">Made with ❤️ &nbsp; by Oleksandr Kyselov</span>
 						</div>
