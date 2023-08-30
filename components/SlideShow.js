@@ -148,7 +148,7 @@ const Slideshow = () => {
 							<Social/>
 							</div>
 						<div className="absolute bottom-0 w-full text-center pb-4 text-sm mix-blend-difference">
-							<span className="text-white">Made with ❤️ &nbsp; by Oleksandr Kyselov</span>
+							<span className="text-white">Made by <i>O.K</i></span>
 						</div>
 					</div>
 				))}
