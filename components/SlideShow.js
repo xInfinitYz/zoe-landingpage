@@ -136,7 +136,7 @@ const Slideshow = () => {
 
 							<div className="flex-1  mix-blend-difference">
 								<button className="transition-opacity mt-4 py-5 px-16 border border-white text-white hover:bg-white hover:text-black focus:outline-none duration-1500 ease-in-out"
-									onClick={() => { window.location.href = "https://store.zoecosentino.com" }}>
+									onClick={() => { window.location.href = "https://shop.zoecosentino.com" }}>
 									Go to the store!
 								</button>
 							</div>
